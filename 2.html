@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .hero-section {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #ffffff;
+    }
+    .hero-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .hero-section p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .hero-section .btn-primary {
+      background-color: #000;
+      border-color: #000;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+    .image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-end; /* Bottom-align images */
+  margin-top: 40px;
+}
+
+.image-grid img {
+  border-radius: 10px;
+}
+
+.image-grid img:nth-child(1) {
+  width: 250px;
+  height: 300px;
+}
+
+.image-grid img:nth-child(2) {
+  width: 250px;
+  height: 250px;
+}
+
+.image-grid img:nth-child(3) {
+  width: 250px;
+  height: 200px;
+}
+
+.image-grid img:nth-child(4) {
+  width: 250px;
+  height: 250px;
+}
+
+.image-grid img:nth-child(5) {
+  width: 250px;
+  height: 300px;
+}
+
+    .navbar {
+      background-color: #ffffff;
+      padding: 10px 20px;
+    }
+    .navbar a {
+      color: #000;
+      font-weight: 500;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .navbar .btn {
+      padding: 5px 15px;
+      border-radius: 20px;
+    }
+    .btn-login {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+    .btn-signup {
+      background-color: #000;
+      color: #fff;
+      border: none;
+    }
+        .impact-section {
+    background-color: #ffffff; /* Light neutral background */
+    padding: 50px 0;
+}
+
+.impact-section h2 {
+    color: #333; /* Darker font for title */
+    font-size: 2rem;
+}
+
+.impact-section p {
+    color: #555; /* Subtle gray for paragraph text */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.impact-section h3 {
+    color: #000; /* Black for numbers */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.impact-section .text-muted {
+    font-size: 0.9rem;
+    color: #777; /* Softer gray for descriptions */
+}
+
+        .stats-container {
+    background-color: #eeeeee; /* Light background for the section */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+    padding: 15px;
+}
+
+.stat-value {
+    color: #0066cc; /* Highlighted color for numbers */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+    color: #5c5858; /* Subtle gray for the description */
+}
+
+.container {
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1 1 calc(50% - 10px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card.img-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .card .card-body {
+            padding: 20px;
+        }
+
+        .card .card-body h3 {
+            font-size: 20px;
+            color: #000;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card .card-body p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .card-light-blue {
+            background-color: #e3f2fd;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+
+        .industry-verticals img {
+            border: 2px solid #dee2e6;
+            transition: transform 0.3s;
+        }
+
+        .industry-verticals img:hover {
+            transform: scale(1.05);
+        }
+        .how-it-works-section {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #ffffff;
+    }
+    .how-it-works-section h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .how-it-works-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .how-it-works-box {
+      text-align: center;
+      flex: 1;
+      max-width: 300px;
+      transition: all 0.3s ease;
+    }
+    .how-it-works-box img {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .how-it-works-box img.enlarged {
+      max-width: 200%; /* Double the size */
+    }
+    .how-it-works-box img.shrunken {
+      max-width: 50%; /* Shrink the other images */
+    }
+    .step {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #000;
+    }
+    .description {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+
+        .benefits-container {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1200px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .benefits-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .benefits-header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .benefits-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .benefits-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .benefits-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .benefits-text {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .benefit-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+        .benefit-item h4 {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item h4 span {
+            color: #000;
+        }
+
+        .benefit-item p {
+            font-size: 16px;
+            color: #000;
+            line-height: 1.6;
+        }
+        
+        .footer {
+      background-color: #000;
+      color: #ffffff;
+      padding: 20px 40px;
+      font-size: 14px;
+      line-height: 1.8;
+      position: relative;
+    }
+    .footer .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .footer p {
+      margin: 0;
+    }
+    .footer .copyright {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 12px;
+    }
+
+    /* Testimonial Section */
+    .testimonial {
+      background-color: #000;
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+      max-width: 2000px;
+      margin: auto;
+    }
+
+    .testimonial-title {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-align: left;
+    }
+
+    .testimonial blockquote {
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: #f1f1f1;
+    }
+
+    .testimonial .author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .testimonial .author img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    .testimonial .author-info {
+      text-align: left;
+    }
+
+    .testimonial .author-info strong {
+      display: block;
+      font-size: 1.2rem;
+    }
+
+    .testimonial .author-info span {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Call to Action Section */
+    .cta {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 3rem auto;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .cta button {
+      background-color: #fff;
+      color: #007bff;
+      border: none;
+      border-radius: 50px;
+      padding: 0.8rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Additional Info Section */
+    .additional-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #aaa;
+     
+    }
+
+    .additional-info a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .additional-info a:hover {
+      text-decoration: underline;
+    }
+        </style>
+        
+        
+    </style>
+  
+</head>
+<body>
+  <nav class="navbar d-flex justify-content-between align-items-center">
+    <div class="navbar-brand">LEVELED</div>
+    <div>
+      <a href="#">Investments</a>
+      <a href="#">Owners/Brokers</a>
+      <a href="#">Lorem Ipsum</a>
+      <button class="btn btn-login">Login</button>
+      <button class="btn btn-signup">Sign Up</button>
+    </div>
+  </nav>
+  
+  <section class="hero-section">
+    <h1>Own a piece of Main Street: Join the SMB revolution!</h1>
+    <p>Diversify your portfolio — unlock the attractive returns of Small - Medium Businesses without any of the operational burden.</p>
+    <a href="#" class="btn btn-primary">Join the Waitlist →</a>
+  
+    <div class="image-grid">
+      <img src="Rectangle 34624636.png" alt="Business 1">
+      <img src="Rectangle 34624637.png" alt="Business 2">
+      <img src="Rectangle 34624638.png" alt="Business 3">
+      <img src="Rectangle 34624639.png" alt="Business 4">
+      <img src="Rectangle 34624640.png" alt="Business 5">
+    </div>
+  </section>
+
+    <div class="container py-5">
+      <div class="row justify-content-center align-items-center stats-container">
+          <div class="col-md-3 text-center stat-item">
+              <p class="text-muted">FranShares Waitlist counter</p>
+              <h3 class="stat-value">41,974</h3>
+          </div>
+          <div class="col-md-3 text-center stat-item">
+              <p class="text-muted">An investor from Connecticut intends to invest</p>
+              <h3 class="stat-value">$2,000</h3>
+          </div>
+          <div class="col-md-3 text-center stat-item">
+              <p class="text-muted">An investor from Oregon intends to invest</p>
+              <h3 class="stat-value">$20,000</h3>
+          </div>
+          <div class="col-md-3 text-center stat-item">
+              <p class="text-muted">An investor from New Jersey intends to invest</p>
+              <h3 class="stat-value">$20,000</h3>
+          </div>
+      </div>
+  </div>
+
+     <!-- Partners Section -->
+     <section class="partners-section text-center py-4">
+      <div class="container">
+          <h3 class="fw-bold">Featured In</h3>
+          <div class="d-flex justify-content-center gap-4 mt-3">
+              <img src="Mask group.png" alt="Partner" class="img-fluid">
+          </div>
+      </div>
+  </section>
+
+
+    <!-- Impact Section -->
+    <section class="impact-section py-5">
+      <div class="container">
+          <div class="row align-items-center">
+              <!-- Left Column: Title and Description -->
+              <div class="col-md-6">
+                  <h2 class="fw-bold">Our impact and</h2>
+                  <h2 class="fw-bold">achievements</h2>
+              </div>
+              <!-- Right Column: Stats -->
+              <div class="col-md-6">
+                <p class="mt-3 text-muted">
+                  Our mission is to democratize SMB ownership, enabling people to invest fractionally in local businesses. 
+                  We aim to foster sustainable growth, create jobs, and fuel local economies, all while providing an 
+                  opportunity for building passive income and generational wealth.
+              </p>
+                  <div class="row text-center">
+                      <div class="col-6">
+                          <h3 class="fw-bold">120</h3>
+                          <p class="text-muted">Assets under management</p>
+                      </div>
+                      <div class="col-6">
+                          <h3 class="fw-bold">500$</h3>
+                          <p class="text-muted">Of cash flow distributed</p>
+                      </div>
+                  </div>
+                  <div class="row text-center mt-4">
+                      <div class="col-6">
+                          <h3 class="fw-bold">10-40%</h3>
+                          <p class="text-muted">Return on investment</p>
+                      </div>
+                      <div class="col-6">
+                          <h3 class="fw-bold">500</h3>
+                          <p class="text-muted">Existing investors</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <div class="container">
+    <div class="header">
+        <h1>Win-win business model</h1>
+        <p>Lorem ipsum dolor sit amet consectetur. Libero ultricies quis pretium ut platea risus ac. Maecenas elementum amet tellus dolor habitasse ipsum.</p>
+    </div>
+
+    <div class="content">
+        <!-- Card 1 -->
+        <div class="card card-light-blue">
+            <div class="card-body">
+                <h3>The problem</h3>
+                <p>Small businesses are the cornerstone of the American economy providing ~50% of all employment. A lot of these businesses are owned by boomers, who will be retiring in the next 5 years.</p>
+                <p>70% of these retiring owners do not have a succession plan. This will result in $5T assets available for sale. This is going to set the stage for the largest wealth transfer of our generation from baby boomers to millennials.</p>
+                <p>However, most millennials are in corporate jobs and cannot work out the time / money / risk tradeoffs to buy and operate these businesses. They will either shut down or be taken over by Private Equity / large corporations. Main street will never look the same again!</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card img-card">
+            <img src="Rectangle 34624626.png" alt="Welcome Open">
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card img-card">
+            <img src="Rectangle 34624629.png" alt="Woman working on laptop">
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card-light-blue">
+            <div class="card-body">
+                <h3>Our solution</h3>
+                <p>Leveled is an innovative platform that is attempting to democratize small business ownership. Our aim is to sustainably run these businesses and continue to provide employment to the community and fuel the local economy.</p>
+                <p>At Leveled, we buy small businesses from retiring owners, make operational improvements and put capable operators in place. Further, we will enable investors to own a piece of these businesses with as little as $10,000 and in turn earn a share of the cash flow generated in the form of dividends. All this without any time investment from our customers!</p>
+                <p>Over time, we will look for opportunities to further grow and scale these businesses to maximize value for our investors.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Industry Verticals -->
+    <section class="industry-verticals py-5">
+        <div class="container text-center">
+            <h3 class="fw-bold">Industry Verticals</h3>
+            <div class="row row-cols-1 row-cols-md-4 mt-4">
+                <div class="col mb-4">
+                    <img src="Rectangle 34624642.png" class="img-fluid rounded" alt="Industry">
+                    <p class="mt-2">Lorem Ipsum</p>
+                </div>
+                <div class="col mb-4">
+                    <img src="Rectangle 34624643.png" class="img-fluid rounded" alt="Industry">
+                    <p class="mt-2">Lorem Ipsum</p>
+                </div>
+                <div class="col mb-4">
+                    <img src="Rectangle 34624644.png" class="img-fluid rounded" alt="Industry">
+                    <p class="mt-2">Lorem Ipsum</p>
+                </div>
+                <div class="col mb-4">
+                    <img src="Rectangle 34624645.png" class="img-fluid rounded" alt="Industry">
+                    <p class="mt-2">Lorem Ipsum</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works-section">
+      <h2>How it works</h2>
+      <div class="how-it-works-row container">
+        <!-- Browse Section -->
+        <div class="how-it-works-box">
+          <img src="Rectangle 34624630.png" alt="Browse Image" class="img-fluid" onclick="enlargeImage(this)">
+          <p class="step">1. Browse</p>
+          <p class="description">Browse Leveled SMBs each listed after thorough due diligence and operator has been put in place.</p>
+        </div>
+        <!-- Invest Section -->
+        <div class="how-it-works-box">
+          <img src="Rectangle 34624631.png" alt="Invest Image" class="img-fluid" onclick="enlargeImage(this)">
+          <p class="step">2. Invest</p>
+          <p class="description">Invest in promising businesses curated for success.</p>
+        </div>
+        <!-- Earn Section -->
+        <div class="how-it-works-box">
+          <img src="Rectangle 34624632.png" alt="Earn Image" class="img-fluid" onclick="enlargeImage(this)">
+          <p class="step">3. Earn</p>
+          <p class="description">Reap the rewards of your investment over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <div class="benefits-container">
+      <div class="benefits-header">
+          <h1>Benefits</h1>
+      </div>
+
+      <div class="benefits-content">
+          <div class="benefits-image">
+              <img src="Rectangle 34624611.png" alt="Benefits Image">
+          </div>
+
+          <div class="benefits-text">
+              <div class="benefit-item">
+                  <h4>01 <span>Passive income</span> </h4>
+                  <p>Generate cash flow without any of the management and operational burden of owning and operating a business.</p>
+              </div>
+
+              <div class="benefit-item">
+                  <h4>02 <span>Diversify portfolio</span></h4>
+                  <p>SMBs have consistently generated healthy profits for decades without being vulnerable to volatility from financial and real estate markets. Now you get a chance to invest in a recession-resistant asset class across industries, locations, and services and truly diversify your portfolio with as low as $10,000 investment.</p>
+              </div>
+
+              <div class="benefit-item">
+                  <h4>03 <span>No operational headache</span></h4>
+                  <p>Owning an SMB entails time and effort to operate it successfully. We take away that pain and allow you to own a piece of the SMB hassle-free.</p>
+              </div>
+
+              <div class="benefit-item">
+                  <h4>04 <span>Value appreciation</span></h4>
+                  <p>Enjoy the appreciation of your investment while we implement best practices, utilize economies of scale, technology enablement, and marketing efforts to maximize the earning potential of the SMB.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- FAQs Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Who can invest on Leveled?
+                  </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                      Anyone who meets the eligibility criteria defined by Leveled can invest. This typically includes being of legal age and meeting specific financial or accreditation requirements.
+                  </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      What is the minimum investment amount?
+                  </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                      The minimum investment amount varies depending on the specific SMB opportunity but generally starts at $1,000.
+                  </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      What kind of returns can I expect from SMB investing?
+                  </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                      Returns vary by investment but can include both passive income from dividends and potential long-term capital appreciation.
+                  </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      How does Leveled make money?
+                  </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                      Leveled earns revenue through a combination of management fees, platform fees, and a share of the profits on certain investment opportunities.
+                  </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      What is the time horizon of investment?
+                  </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                      Investment horizons depend on the SMB and can range from a few months to several years, as outlined in the investment details.
+                  </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      How can I liquidate my investment?
+                  </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                      Liquidity options are limited and depend on the specific terms of the SMB investment. Some investments may offer buy-back options or secondary market sales.
+                  </div>
+              </div>
+          </div>
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSeven">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      What criteria does Leveled utilize for investments?
+                  </button>
+              </h2>
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                      Leveled conducts thorough due diligence, evaluating SMBs based on financial performance, market potential, and operational stability.
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Testimonial Section -->
+<section class="testimonial">
+  <div class="testimonial-title text-start">Success Stories</div>
+  <blockquote>
+    “The platform is very easy to use, and I now have a stable passive income. I really like it, highly recommended!”
+  </blockquote>
+  <div class="author">
+    <img src="https://via.placeholder.com/50" alt="Author">
+    <div class="author-info">
+      <strong>David Smith</strong>
+      <span>SEO Lorem Ipsum</span>
+    </div>
+  </div>
+
+
+<!-- Call to Action Section -->
+<section class="cta">
+  <h2>Start investing with us</h2>
+  <p>Convert the user to create an account and invest on the platform to enjoy monthly cash flow/dividend and appreciation.</p>
+  <button>Join the Waitlist →</button>
+</section>
+
+<!-- Additional Info Section -->
+<div class="additional-info">
+  <div>
+    <a href="#">Investments</a>  
+    <a href="#">Owners/Brokers</a> 
+    <a href="#">Lorem Ipsum</a>
+  </div>
+  <div class="contact">
+    <a href="mailto:support@getleveled.co">support@getleveled.co</a>
+  </div>
+</div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="copyright">&copy; 2024 Leveled. All rights reserved.</div>
+        <div class="logo">LEVELED</div>
+        <p>Leveled, Inc. ("Leveled", the "Company", "our" or "we") operates a website at <a href="https://getleveled.co">https://getleveled.co</a> (the "Platform"). By using the Platform, you accept our Terms of Service and Privacy Policy.</p>
+        <p>This Platform may contain certain historical returns, expected returns, projections or forward-looking statements. Past performance is not a guarantee of future results. Any such historical returns, expected returns, projections or forward-looking statements may not reflect actual future performance. Our ability to predict future events, actions, plans or results is inherently uncertain and actual outcomes may differ materially from those set forth on or anticipated by Leveled. Diversification and asset allocation do not ensure profit or guarantee against loss.</p>
+        <p>All investments involve risk, including the risk of the partial or total loss of your invested capital. Information provided by Leveled does not consider an investor’s specific objectives or risk profile. Investment decisions should be made based on your own objectives, risk tolerance and circumstances, and in consultation with your own professional advisors.</p>
+        <p>The information contained on the Platform neither constitutes an offer for nor a solicitation of interest in any specific securities or any offering thereof. Content provided by Leveled is not intended to be a recommendation or investment advice, and Leveled does not provide tax, accounting, legal or financial advice. Leveled is not registered, licensed or supervised as a broker-dealer by the Securities and Exchange Commission or the Financial Industry Regulatory Authority.</p>
+        <p>While the data we use from third parties is believed to be reliable, we cannot ensure the accuracy or completeness of data provided by investors or other third parties. Leveled takes any potential security issues seriously and encourages the responsible and timely reporting of unknown security issues. Please send any discovered security concerns to <a href="mailto:support@getleveled.co">support@getleveled.co</a>.</p>
+      </div>
+    </footer>
+
+    <script>
+      function enlargeImage(clickedImage) {
+        const images = document.querySelectorAll('.how-it-works-box img');
+        images.forEach(img => {
+          if (img === clickedImage) {
+            img.classList.toggle('enlarged');
+            img.classList.remove('shrunken');
+          } else {
+            img.classList.toggle('shrunken', clickedImage.classList.contains('enlarged'));
+            img.classList.remove('enlarged');
+          }
+        });
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
